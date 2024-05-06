@@ -1,23 +1,41 @@
 <div class="container">
     <div class="row">
         <div class="col" class="d-flex flex-row justify-content-center">
-                <ng-container *ngFor="let colour of colours">
+                <ng-container *ngFor="let colour of colours; index as i">
                     <div class="text-center">
-                        <p>{{ colour.hexCode|hex }}</p>
+                        <h3>{{ colour.hexCode|hex }}</h3>
                         <div [ngStyle]="{backgroundColor: setColour(colour)}" class="colour"></div>
+                        <button mat-icon-button class="lock">
+                            <mat-icon>lock</mat-icon>
+                        </button>
+                        <button mat-icon-button class="delete" *ngIf="coloursAmount > min" (click)="onDeleteColour(i)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button mat-icon-button class="add" *ngIf="i < coloursAmount-1" (click)="onAddColour(i)">
+                            <mat-icon>add</mat-icon>
+                        </button>
                     </div>
                 </ng-container>
         </div>
     </div>
+    <div class="row">
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button *ngFor="let option of colourOptions; index as i" 
+                    class="option" 
+                    [attr.id]="'option' + option"
+                    [style.background-color]="optionButtonColor(option)" 
+                    (click)="onSelectOption(option)">{{ option }}</button>
+        </div>
+    </div>   
     <div class="row" class="actionButtons">
         <div class="col" class="d-flex flex-row justify-content-center">
-            <button mat-flat-button color="accent">regenerate</button>
+            <button mat-flat-button color="primary" class="actionButton" (click)="generatePalette()">regenerate<mat-icon>refresh</mat-icon></button>
         </div>
         <div class="col" class="d-flex flex-row justify-content-center">
-            <button mat-flat-button color="accent">start from colour</button>
+            <button mat-flat-button color="accent" class="actionButton">start from colour</button>
         </div>
         <div class="col" class="d-flex flex-row justify-content-center">
-            <button mat-flat-button color="accent">save</button>
+            <button mat-flat-button color="accent" class="actionButton">save</button>
         </div>
     </div>
 </div>
