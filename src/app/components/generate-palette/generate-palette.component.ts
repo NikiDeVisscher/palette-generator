@@ -17,27 +17,54 @@ export class GeneratePaletteComponent implements OnInit {
   constructor(private paletteService: PaletteService) {}
 
   ngOnInit(): void {
-    //to add a palette, we need an id (get previous id), a name (empty string), and colours
+    //to add a palette, we need a name (empty string), and colours
     //to add a colour, we need a hexcode and rgb values
   }
 
-  //algorithm based on https://shahriyarshahrabi.medium.com/procedural-color-algorithm-a37739f6dc1
-  generatePalette(): Palette {
-    var keyColours = new Array;
-    for (var i = 0; i < this.coloursAmount; i++)
+  onIncrementColours(): boolean {
+    this.coloursAmount++;
+    if (this.coloursAmount == 6)
     {
-      var now = Date.now();
-      var keyColour = new Colour;
-      keyColour.rValue = Math.abs(Math.sin(this.seededRandom(now) + 12) + Math.sin(this.seededRandom(now) * 0.7 + 71.124) * 0.5);
+      return false;
     }
-    
-    var newPalette = new Palette;
-    return newPalette;
+    else 
+    {
+      return true;
+    }
   }
 
-  seededRandom(seed: number): number {
-    let x = Math.sin(seed) * 10000;
-    x += Math.sin(x);
-    return x - Math.floor(x);
-}
+  onDecrementColours(): boolean {
+    this.coloursAmount--;
+    if (this.coloursAmount == 3)
+    {
+      return false;
+    }
+    else 
+    {
+      return true;
+    }
+  }
+
+  generatePalette() {
+    var newPalette = new Palette;
+
+    for (var i = 0; i < this.coloursAmount; i++)
+    {
+      var newColour = new Colour;
+      newColour.rValue = Math.floor(Math.random() * 256);
+      newColour.gValue = Math.floor(Math.random() * 256);
+      newColour.bValue = Math.floor(Math.random() * 256);
+
+      newColour.hexCode = this.toHex(newColour.rValue) + this.toHex(newColour.gValue) + this.toHex(newColour.bValue);
+
+      newPalette.colours.push(newColour);
+    }
+
+    this.palette = newPalette;
+  }
+
+  toHex(num: number): string {
+    var hex = num.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+  }
 }

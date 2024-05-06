@@ -1,7 +1,7 @@
 import { Colour } from "./colour.model";
 
 export class Palette {
-    id: number;
+    id?: number;
     name: string;
     colours: Colour[];
 

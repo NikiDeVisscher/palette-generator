@@ -1,86 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Palette } from '../models/palette.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaletteService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  palettes: Palette[] = [
-    {
-      id: 0,
-      name: "Louisette",
-      colours: [
-        {
-          hexCode: "FFB8D1",
-          rValue: 255,
-          gValue: 184,
-          bValue: 209
-        },
-        {
-          hexCode: "E4B4C2",
-          rValue: 228,
-          gValue: 180,
-          bValue: 194
-        },
-        {
-          hexCode: "1D1E2C",
-          rValue: 29,
-          gValue: 30,
-          bValue: 44
-        }
-      ]
-    },
-    {
-      id: 1,
-      name: "Durandal",
-      colours: [
-        {
-          hexCode: "226F54",
-          rValue: 34, 
-          gValue: 111,
-          bValue: 84
-        },
-        {
-          hexCode: "87C38F",
-          rValue: 135,
-          gValue: 195,
-          bValue: 143
-        },
-        {
-          hexCode: "F8BD4F",
-          rValue: 248,
-          gValue: 189,
-          bValue: 79
-        }
-      ]
-    }
-  ];
-
-  getPalettes() {
-    return this.palettes;
+  getPalettes(): Observable<Palette[]> {
+    const url = 'http://localhost:3000/palettes';
+    return this.http.get<Palette[]>(url);
   }
 
-  getPalette(id: number) {
-    var foundPalette;
-    this.palettes.forEach(palette => {
-      if (palette.id == id)
-        foundPalette = palette;
-    });
-
-    return foundPalette;
+  getPalette(id: number): Observable<Palette> {
+    const url = 'http://localhost:3000/palettes/' + id;
+    return this.http.get<Palette>(url);
   }
 
-  addPalette(palette: Palette): void {
-    var tempPalettes = new Array();
+  addPalette(palette: Palette): Observable<Palette> {
+    /*var tempPalettes = new Array();
     tempPalettes.push(palette);
     this.palettes.forEach(aPalette => {
       tempPalettes.push(aPalette);
     });
 
     this.palettes = new Array();
-    this.palettes = tempPalettes;
+    this.palettes = tempPalettes;*/
+    const url = 'http://localhost:3000/palettes';
+    return this.http.post<Palette>(url, palette);
+  }
+
+  //needed?
+  changeName(newName: {name: string}, id: string): Observable<Palette> {
+    const url = 'http://localhost:3000/palettes/' + id;
+    return this.http.patch<Palette>(url, newName);
+  }
+
+  updatePalette(palette: Palette): Observable<Palette> {
+    const url = 'http://localhost:3000/palettes/' + palette.id;
+    return this.http.put<Palette>(url, palette);
+  }
+
+  deletePalette(id: string): Observable<any> {
+    const url = 'http://localhost:3000/palettes/' + id;
+    return this.http.delete(url);
   }
 }
