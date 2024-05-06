@@ -1,1 +1,23 @@
-<p>generate-palette works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col" class="d-flex flex-row justify-content-center">
+                <ng-container *ngFor="let colour of colours">
+                    <div class="text-center">
+                        <p>{{ colour.hexCode|hex }}</p>
+                        <div [ngStyle]="{backgroundColor: setColour(colour)}" class="colour"></div>
+                    </div>
+                </ng-container>
+        </div>
+    </div>
+    <div class="row" class="actionButtons">
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button mat-flat-button color="accent">regenerate</button>
+        </div>
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button mat-flat-button color="accent">start from colour</button>
+        </div>
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button mat-flat-button color="accent">save</button>
+        </div>
+    </div>
+</div>
