@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Colour } from '../../models/colour.model';
 import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-palette',
@@ -14,13 +15,26 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './display-palette.component.css'
 })
 export class DisplayPaletteComponent implements OnInit{
-  palette: Palette = new Palette;
-  id: number = 0; //change later
+  palette: Palette = new Palette();
 
-  constructor(private paletteService: PaletteService) {}
+  constructor(private paletteService: PaletteService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.palette = this.paletteService.getPalette(this.id)!;
+    this.route.params
+    .subscribe((params: Params) => {
+      //this.onLoadPalette(params['id']!);
+      this.onLoadPalette("0");
+    });
+  }
+
+  onLoadPalette(id: string): void {
+    this.paletteService.getPalette(id).subscribe({
+      next: (response: Palette) => {
+        console.log('palette loaded: ', response);
+        this.palette = response;
+      },
+      error: (error) => console.log('error: ', error)
+    });
   }
 
   setColour(colour: Colour): string {

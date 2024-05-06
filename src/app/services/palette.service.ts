@@ -15,7 +15,7 @@ export class PaletteService {
     return this.http.get<Palette[]>(url);
   }
 
-  getPalette(id: number): Observable<Palette> {
+  getPalette(id: string): Observable<Palette> {
     const url = 'http://localhost:3000/palettes/' + id;
     return this.http.get<Palette>(url);
   }

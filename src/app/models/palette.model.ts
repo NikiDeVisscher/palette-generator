@@ -2,7 +2,7 @@ import { Colour } from "./colour.model";
 
 export class Palette {
     id?: number;
-    name: string;
+    name?: string;
     colours: Colour[];
 
     constructor(id: number = -1, name: string = "", colours: Colour[] = new Array)
