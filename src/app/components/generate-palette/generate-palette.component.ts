@@ -101,7 +101,6 @@ export class GeneratePaletteComponent implements OnInit {
   }
 
   generatePalette() { //to add: check if no double colours
-    //var tempColours = new Array;
     this.colourService.resetColours();
 
     for (var i = 0; i < this.coloursAmount; i++)
@@ -109,12 +108,12 @@ export class GeneratePaletteComponent implements OnInit {
       if (this.locks[i] == false)
         var newColour = this.generateColour();
       else 
-        var newColour = this.colourService.getColour(i);
+        var newColour = this.colours[i];
 
-      //tempColours.push(newColour);
       this.colourService.addColour(newColour);
     }
 
+    this.colours = new Array;
     this.colours = this.colourService.getColours();
   }
 
