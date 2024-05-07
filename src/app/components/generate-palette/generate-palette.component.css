@@ -11,11 +11,11 @@ h3 {
     height: 150px;
 }
 
-.delete, .add, .lock {
+.delete, .add {
     color: #C1CBCC;
 }
 
-.delete:hover, .add:hover, .lock:hover {
+.delete:hover, .add:hover {
     color: #06373E;
 }
 

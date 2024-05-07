@@ -18,6 +18,7 @@ export class GeneratePaletteComponent implements OnInit {
   palette: Palette = new Palette;
   colours: Colour[] = new Array;
   locks: boolean[] = new Array(false, false, false);
+  hoveredLock: number = -1;
   coloursAmount: number = 3;
   colourOptions: number[] = new Array;
   min: number = 3;
@@ -31,6 +32,13 @@ export class GeneratePaletteComponent implements OnInit {
       this.colourOptions.push(i);
     }
     this.generatePalette();
+  }
+
+  onLockColour(index: number): void {
+    if (this.locks[index])
+      this.locks[index] = false;
+    else 
+      this.locks[index] = true;
   }
 
   onDeleteColour(index: number):void {
@@ -80,6 +88,30 @@ export class GeneratePaletteComponent implements OnInit {
           this.locks.push(prevLocks[i-1]);
         }
       }
+    }
+  }
+
+  toggleLock(index: number): void {
+    if (this.hoveredLock < 0)
+      this.hoveredLock = index;
+    else if (this.hoveredLock == index)
+      this.hoveredLock = -1;
+  }
+
+  checkLock(index: number): string {
+    if (this.locks[index]) //als lock gelocked is
+    {
+      if (this.hoveredLock == index) //als gehovered wordt
+        return '#06373E'; //donkere kleur
+      else //als niet gehovered wordt
+        return '#06373E'; //donkere kleur
+    }
+    else //als lock niet gelocked is
+    {
+      if (this.hoveredLock == index) //als gehovered wordt
+        return '#06373E'; //donkere kleur
+      else //als niet gehovered wordt
+        return '#C1CBCC'; //lichte kleur
     }
   }
 
