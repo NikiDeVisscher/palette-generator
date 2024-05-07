@@ -43,61 +43,39 @@ export class GeneratePaletteComponent implements OnInit {
   }
 
   onDeleteColour(index: number):void {
-    if (this.decrementColours())
-    {
-      /*var tempColours = new Array;
-      var tempLocks = new Array;
-      for (var i = 0; i <= this.coloursAmount; i++)
-      {
-        if (i != index)
-        {
-          tempColours.push(this.colourService.getColour(i));
-          tempLocks.push(this.locks[i]);
-        }
-      }*/
-      //var tempColours = this.colours;
-      //var tempLocks = this.locks;
-      //tempColours.splice(index, 1);
-      //tempLocks.splice(index, 1);
+    this.coloursAmount--;
 
-      //this.colours = new Array;
-      //this.colours = tempColours;
-      //this.colourService.setColours(tempColours);
-      //this.colours = this.colourService.getColours();
-      //this.locks = new Array;
-      //this.locks = tempLocks;
-
-      this.colours.splice(index, 1);
-      this.locks.splice(index, 1);
-    }
+    this.colours.splice(index, 1);
+    this.colourService.setColours(this.colours);
+    this.locks.splice(index, 1);
   }
 
   onAddColour(prevIndex: number): void {
-    if (this.incrementColours())
+    this.coloursAmount++;
+    
+    var prevColours = this.colourService.getColours();
+    var prevLocks = this.locks;
+    this.colourService.resetColours();
+    this.locks = new Array;
+    for (var i = 0; i < this.coloursAmount; i++)
     {
-      var prevColours = this.colourService.getColours();
-      var prevLocks = this.locks;
-      this.colourService.resetColours();
-      this.locks = new Array;
-      for (var i = 0; i < this.coloursAmount; i++)
+      if (i < prevIndex + 1)
       {
-        if (i < prevIndex + 1)
-        {
-          this.colourService.addColour(prevColours[i]);
-          this.locks.push(prevLocks[i]);
-        }
-        else if (i == prevIndex + 1)
-        {
-          this.colourService.addColour(this.generateColour());
-          this.locks.push(false);
-        }
-        else 
-        {
-          this.colourService.addColour(prevColours[i-1]);
-          this.locks.push(prevLocks[i-1]);
-        }
+        this.colourService.addColour(prevColours[i]);
+        this.locks.push(prevLocks[i]);
+      }
+      else if (i == prevIndex + 1)
+      {
+        this.colourService.addColour(this.generateColour());
+        this.locks.push(false);
+      }
+      else 
+      {
+        this.colourService.addColour(prevColours[i-1]);
+        this.locks.push(prevLocks[i-1]);
       }
     }
+    
     this.colours = this.colourService.getColours();
   }
 
@@ -120,22 +98,6 @@ export class GeneratePaletteComponent implements OnInit {
       else //als niet gehovered wordt
         return '#C1CBCC'; //lichte kleur
     }
-  }
-
-  incrementColours(): boolean {
-    this.coloursAmount++;
-    if (this.coloursAmount == this.max)
-      return false;
-    else 
-      return true;
-  }
-
-  decrementColours(): boolean {
-    this.coloursAmount--;
-    if (this.coloursAmount == this.min)
-      return false;
-    else 
-      return true;
   }
 
   generatePalette() { //to add: check if no double colours
