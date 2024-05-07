@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ColoursService } from '../../services/colours.service';
 
 @Component({
   selector: 'app-generate-palette',
@@ -24,7 +25,7 @@ export class GeneratePaletteComponent implements OnInit {
   min: number = 3;
   max: number = 6;
 
-  constructor(private paletteService: PaletteService) {}
+  constructor(private paletteService: PaletteService, private colourService: ColoursService) {}
 
   ngOnInit(): void {
     for (var i = this.min; i <= this.max; i++)
@@ -44,51 +45,60 @@ export class GeneratePaletteComponent implements OnInit {
   onDeleteColour(index: number):void {
     if (this.decrementColours())
     {
-      var tempColours = new Array;
+      /*var tempColours = new Array;
       var tempLocks = new Array;
-      for (var i = 0; i < this.coloursAmount; i++)
+      for (var i = 0; i <= this.coloursAmount; i++)
       {
         if (i != index)
         {
-          tempColours.push(this.colours[i]);
+          tempColours.push(this.colourService.getColour(i));
           tempLocks.push(this.locks[i]);
         }
-      }
-      this.colours = new Array;
-      this.locks = new Array;
-      this.colours = tempColours;
-      this.locks = tempLocks;
+      }*/
+      //var tempColours = this.colours;
+      //var tempLocks = this.locks;
+      //tempColours.splice(index, 1);
+      //tempLocks.splice(index, 1);
 
-      //routing!!!
+      //this.colours = new Array;
+      //this.colours = tempColours;
+      //this.colourService.setColours(tempColours);
+      //this.colours = this.colourService.getColours();
+      //this.locks = new Array;
+      //this.locks = tempLocks;
+
+      this.colours.splice(index, 1);
+      this.locks.splice(index, 1);
     }
   }
 
   onAddColour(prevIndex: number): void {
     if (this.incrementColours())
     {
-      var prevColours = this.colours;
+      var prevColours = this.colourService.getColours();
       var prevLocks = this.locks;
-      this.colours = new Array;
+      this.colourService.resetColours();
       this.locks = new Array;
       for (var i = 0; i < this.coloursAmount; i++)
       {
         if (i < prevIndex + 1)
         {
-          this.colours.push(prevColours[i]);
+          this.colourService.addColour(prevColours[i]);
           this.locks.push(prevLocks[i]);
         }
         else if (i == prevIndex + 1)
         {
-          this.colours.push(this.generateColour());
+          this.colourService.addColour(this.generateColour());
           this.locks.push(false);
         }
         else 
         {
-          this.colours.push(prevColours[i-1]);
+          this.colourService.addColour(prevColours[i-1]);
           this.locks.push(prevLocks[i-1]);
         }
       }
     }
+    this.colours = this.colourService.getColours();
   }
 
   toggleLock(index: number): void {
@@ -101,9 +111,6 @@ export class GeneratePaletteComponent implements OnInit {
   checkLock(index: number): string {
     if (this.locks[index]) //als lock gelocked is
     {
-      if (this.hoveredLock == index) //als gehovered wordt
-        return '#06373E'; //donkere kleur
-      else //als niet gehovered wordt
         return '#06373E'; //donkere kleur
     }
     else //als lock niet gelocked is
@@ -132,19 +139,21 @@ export class GeneratePaletteComponent implements OnInit {
   }
 
   generatePalette() { //to add: check if no double colours
-    var tempColours = new Array;
+    //var tempColours = new Array;
+    this.colourService.resetColours();
 
     for (var i = 0; i < this.coloursAmount; i++)
     {
       if (this.locks[i] == false)
         var newColour = this.generateColour();
       else 
-        newColour = this.colours[i];
+        var newColour = this.colourService.getColour(i);
 
-      tempColours.push(newColour);
+      //tempColours.push(newColour);
+      this.colourService.addColour(newColour);
     }
 
-    this.colours = tempColours;
+    this.colours = this.colourService.getColours();
   }
 
   generateColour(): Colour {
