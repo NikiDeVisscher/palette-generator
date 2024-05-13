@@ -1,1 +1,37 @@
-<p>save-colour works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <ng-container *ngFor="let colour of colours; index as i">
+                <div class="text-center">
+                    <h3>{{ colour.hexCode|hex }}</h3>
+                    <div [ngStyle]="{backgroundColor: setColour(colour), borderLeft: setBorderLeft(i), borderRight: setBorderRight(i)}" class="colour"></div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="row">
+        <form class="nameForm">
+            <div class="col" class="d-flex flex-row justify-content-center">
+                <h3>name:</h3>
+            </div>
+            <div class="col" class="d-flex flex-row justify-content-center">
+                <input type="text" name="name" (input)="onEnterName($event)"/>
+            </div>
+            <div class="col" class="d-flex flex-row justify-content-center">
+                <p id="warning">{{ warning }}</p>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="actionButtons">
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button mat-flat-button color="primary" class="actionButton" (click)="onSave()">save</button>
+        </div>
+        <div class="col" class="d-flex flex-row justify-content-center">
+            <button mat-flat-button color="accent" class="actionButton" (click)="onCancel()">cancel</button>
+        </div>
+        </div>
+    </div>
+</div>

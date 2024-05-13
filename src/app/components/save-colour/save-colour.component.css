@@ -1,0 +1,36 @@
+h3 {
+    color: #06373E;
+}
+
+.colour {
+    width: 380px;
+    height: 150px;
+    border-top: 5px solid #06373E;
+    border-bottom: 5px solid #06373E;
+}
+
+.actionButtons>div>button {
+    width: 200px;
+}
+
+.actionButton {
+    margin: 5px 0;
+    border-radius: 30px;
+}
+
+input {
+    width: 800px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 25px;
+    border: 2px solid #06373E;
+    text-align: center;
+}
+
+.row {
+    margin: 40px auto;
+}
+
+#warning {
+    color: #D6492B;
+}

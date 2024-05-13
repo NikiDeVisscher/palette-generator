@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { DisplayPaletteComponent } from './components/display-palette/display-palette.component';
 import { GeneratePaletteComponent } from './components/generate-palette/generate-palette.component';
+import { SaveColourComponent } from './components/save-colour/save-colour.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DisplayPaletteComponent, GeneratePaletteComponent],
+  imports: [RouterModule, DisplayPaletteComponent, GeneratePaletteComponent, SaveColourComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

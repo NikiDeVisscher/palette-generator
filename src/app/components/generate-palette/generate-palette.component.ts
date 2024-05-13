@@ -7,6 +7,7 @@ import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ColoursService } from '../../services/colours.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-generate-palette',
@@ -18,21 +19,29 @@ import { ColoursService } from '../../services/colours.service';
 export class GeneratePaletteComponent implements OnInit {
   palette: Palette = new Palette;
   colours: Colour[] = new Array;
-  locks: boolean[] = new Array(false, false, false);
+  locks: boolean[] = new Array;
   hoveredLock: number = -1;
   coloursAmount: number = 3;
   colourOptions: number[] = new Array;
   min: number = 3;
   max: number = 6;
 
-  constructor(private paletteService: PaletteService, private colourService: ColoursService) {}
+  constructor(private paletteService: PaletteService, private colourService: ColoursService, private router: Router) {}
 
   ngOnInit(): void {
     for (var i = this.min; i <= this.max; i++)
-    {
       this.colourOptions.push(i);
+
+    for (var i = 0; i < this.min; i++)
+      this.locks.push(false);
+
+    if (this.colourService.getLocks() == null)
+      this.generatePalette();
+    else
+    {
+      this.colours = this.colourService.getColours();
+      this.locks = this.colourService.getLocks()!;
     }
-    this.generatePalette();
   }
 
   onLockColour(index: number): void {
@@ -152,5 +161,10 @@ export class GeneratePaletteComponent implements OnInit {
     this.coloursAmount = option;
     this.locks.push(false);
     this.generatePalette();
+  }
+
+  onSave(): void {
+    this.colourService.saveLocks(this.locks);
+    this.router.navigate(['/save']);
   }
 }

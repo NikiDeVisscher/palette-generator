@@ -6,6 +6,7 @@ import { Colour } from '../models/colour.model';
 })
 export class ColoursService {
   colours: Colour[] = new Array;
+  locks: boolean[] = new Array;
 
   constructor() { }
 
@@ -28,5 +29,17 @@ export class ColoursService {
 
   resetColours(): void {
     this.colours = new Array;
+  }
+
+  saveLocks(locks: boolean[]): void {
+    this.locks = new Array;
+    this.locks = locks;
+  }
+
+  getLocks(): boolean[] | null {
+    if (this.locks.length == 0)
+      return null;
+    else
+      return this.locks;
   }
 }
