@@ -29,9 +29,9 @@ export class SaveColourComponent implements OnInit {
 
   setColour(colour: Colour): string {
     var value = 'rgb(';
-    value += colour.rValue.toString() + ', ';
-    value += colour.gValue.toString() + ', ';
-    value += colour.bValue.toString() + ')';
+    value += colour.rValue + ', ';
+    value += colour.gValue + ', ';
+    value += colour.bValue + ')';
     return value;
   }
 
@@ -75,7 +75,8 @@ export class SaveColourComponent implements OnInit {
     {
       this.warning = "";
       this.palette.colours = this.colours;
-      this.paletteService.addPalette(this.palette);
+      this.palette.id = undefined;
+      this.paletteService.addPalette(this.palette).subscribe({});
       this.router.navigate(['/view']);
     }
     else

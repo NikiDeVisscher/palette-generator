@@ -128,11 +128,11 @@ export class GeneratePaletteComponent implements OnInit {
 
   generateColour(): Colour {
     var colour = new Colour;
-    colour.rValue = Math.floor(Math.random() * 256);
-    colour.gValue = Math.floor(Math.random() * 256);
-    colour.bValue = Math.floor(Math.random() * 256);
+    colour.rValue = (Math.floor(Math.random() * 256)).toString();
+    colour.gValue = (Math.floor(Math.random() * 256)).toString();
+    colour.bValue = (Math.floor(Math.random() * 256)).toString();
 
-    colour.hexCode = this.toHex(colour.rValue) + this.toHex(colour.gValue) + this.toHex(colour.bValue);
+    colour.hexCode = this.toHex(parseInt(colour.rValue)) + this.toHex(parseInt(colour.gValue)) + this.toHex(parseInt(colour.bValue));
     colour.hexCode = colour.hexCode.toUpperCase();
 
     return colour;
@@ -145,9 +145,9 @@ export class GeneratePaletteComponent implements OnInit {
 
   setColour(colour: Colour): string {
     var value = 'rgb(';
-    value += colour.rValue.toString() + ', ';
-    value += colour.gValue.toString() + ', ';
-    value += colour.bValue.toString() + ')';
+    value += colour.rValue + ', ';
+    value += colour.gValue + ', ';
+    value += colour.bValue + ')';
     return value;
   }
 
