@@ -75,7 +75,6 @@ export class SaveColourComponent implements OnInit {
     {
       this.warning = "";
       this.palette.colours = this.colours;
-      this.palette.id = undefined;
       this.paletteService.addPalette(this.palette).subscribe({});
       this.router.navigate(['/view']);
     }

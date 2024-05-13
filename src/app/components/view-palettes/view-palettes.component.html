@@ -1,1 +1,19 @@
-<p>view-palettes works!</p>
+<div class="container">
+    <ng-container *ngFor="let palette of palettes; index as i">
+        <div class="row">
+            <div class="item">
+                <div  class="col">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="colours">
+                        <ng-container *ngFor="let colour of palette.colours; index as i">
+                            <div class="d-flex flex-row justify-content-center">
+                                <div [ngStyle]="{backgroundColor: setColour(colour)}" class="colour"></div>
+                            </div>
+                        </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

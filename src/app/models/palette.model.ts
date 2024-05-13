@@ -5,9 +5,8 @@ export class Palette {
     name?: string;
     colours: Colour[];
 
-    constructor(id: number = -1, name: string = "", colours: Colour[] = new Array)
+    constructor(name: string = "", colours: Colour[] = new Array)
     {
-        this.id = id.toString();
         this.name = name;
         this.colours = colours;
     }
