@@ -20,10 +20,8 @@ export class DisplayPaletteComponent implements OnInit{
   constructor(private paletteService: PaletteService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.route.params
-    .subscribe((params: Params) => {
-      //this.onLoadPalette(params['id']!);
-      this.onLoadPalette("0");
+    this.route.params.subscribe((params: Params) => {
+      this.onLoadPalette(params['id']!);
     });
   }
 

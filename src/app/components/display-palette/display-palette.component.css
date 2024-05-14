@@ -2,3 +2,15 @@
     width: 200px;
     height: 200px;
 }
+
+.palette {
+    margin: 30px auto;
+}
+
+h2 {
+    color: #047792;
+}
+
+h3 {
+    color: #06373E;
+}
