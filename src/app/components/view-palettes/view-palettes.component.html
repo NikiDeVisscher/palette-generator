@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<ng-container *ngFor="let palette of palettes">
+<ng-container *ngFor="let palette of palettes; index as i">
     <div class="container item" (click)="onView(palette.id)">
         <div class="row d-flex align-items-center">
             <div class="col-sm-6 colours">
@@ -12,12 +12,20 @@
             <div class="col-sm-6 actions">
                 <div class="row">
                     <div class="col-sm-10 name">
-                        <p>{{ palette.name }}</p>
+                        <input type="text" name="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
+                        <ng-template #displayName>
+                            <p>{{ palette.name }}</p>
+                        </ng-template>
                     </div>
                     <div class="col-sm-1">
-                        <button mat-icon-button class="edit" (click)="onEdit(palette.id, $event)">
-                            <mat-icon>edit</mat-icon>
+                        <button mat-icon-button class="edit" (click)="onSave(i, $event)" *ngIf="palette.id == editing; else editButton">
+                            <mat-icon>save</mat-icon>
                         </button>
+                        <ng-template #editButton>
+                            <button mat-icon-button class="edit" (click)="onEdit(palette.id, $event)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </ng-template>
                     </div>
                     <div class="col-sm-1">
                         <button mat-icon-button class="edit" (click)="onDelete(palette.id, $event)">
