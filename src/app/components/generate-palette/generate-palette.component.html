@@ -23,9 +23,8 @@
 </div>
 <div class="row">
     <div class="col d-flex flex-row justify-content-center">
-        <button *ngFor="let option of colourOptions; index as i" 
+        <button *ngFor="let option of colourOptions" 
                 class="option" 
-                [attr.id]="'option' + option"
                 [style.background-color]="optionButtonColor(option)" 
                 (click)="onSelectOption(option)">{{ option }}</button>
     </div>

@@ -163,8 +163,22 @@ export class GeneratePaletteComponent implements OnInit {
   }
 
   onSelectOption(option: number): void {
+    if (option < this.coloursAmount)
+    {
+      var lockCount = 0;
+      this.locks.forEach(lock => {
+        if (lock)
+          lockCount++;
+      });
+      if (option < lockCount)
+        return;
+    }
+    if (option > this.coloursAmount)
+    {
+      for (var i = 0; i < option - this.coloursAmount; i++)
+        this.locks.push(false);
+    }
     this.coloursAmount = option;
-    this.locks.push(false);
     this.generatePalette();
   }
 
