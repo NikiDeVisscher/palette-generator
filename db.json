@@ -47,6 +47,84 @@
           "bValue": "79"
         }
       ]
+    },
+    {
+      "id": "24b4",
+      "name": "Chaos",
+      "colours": [
+        {
+          "hexCode": "A65B70",
+          "rValue": "166",
+          "gValue": "91",
+          "bValue": "112"
+        },
+        {
+          "hexCode": "915C6B",
+          "rValue": "145",
+          "gValue": "92",
+          "bValue": "107"
+        },
+        {
+          "hexCode": "AA3681",
+          "rValue": "170",
+          "gValue": "54",
+          "bValue": "129"
+        },
+        {
+          "hexCode": "B9AF22",
+          "rValue": "185",
+          "gValue": "175",
+          "bValue": "34"
+        },
+        {
+          "hexCode": "2CDADB",
+          "rValue": "44",
+          "gValue": "218",
+          "bValue": "219"
+        },
+        {
+          "hexCode": "731680",
+          "rValue": "115",
+          "gValue": "22",
+          "bValue": "128"
+        }
+      ]
+    },
+    {
+      "id": "554a",
+      "name": "Order",
+      "colours": [
+        {
+          "hexCode": "F3243E",
+          "rValue": "243",
+          "gValue": "36",
+          "bValue": "62"
+        },
+        {
+          "hexCode": "33A8A3",
+          "rValue": "51",
+          "gValue": "168",
+          "bValue": "163"
+        },
+        {
+          "hexCode": "BF2F58",
+          "rValue": "191",
+          "gValue": "47",
+          "bValue": "88"
+        },
+        {
+          "hexCode": "0257F3",
+          "rValue": "2",
+          "gValue": "87",
+          "bValue": "243"
+        },
+        {
+          "hexCode": "40B60B",
+          "rValue": "64",
+          "gValue": "182",
+          "bValue": "11"
+        }
+      ]
     }
   ]
 }

@@ -1,13 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="col" class="d-flex flex-row justify-content-center">
             <ng-container *ngFor="let colour of colours; index as i">
-                <div class="text-center">
+                <div [ngClass]="setClass()" style="padding: 0;">
                     <h3>{{ colour.hexCode|hex }}</h3>
                     <div [ngStyle]="{backgroundColor: setColour(colour), borderLeft: setBorderLeft(i), borderRight: setBorderRight(i)}" class="colour"></div>
                 </div>
             </ng-container>
-        </div>
     </div>
 
     <div class="row">

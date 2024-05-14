@@ -37,7 +37,7 @@ export class ViewPalettesComponent implements OnInit {
   }
 
   setClass(palette: Palette): string {
-    var num = 12 / palette.colours.length;
+    var num = Math.floor(12 / palette.colours.length);
     return "col-sm-" + num + " colour";
   }
 

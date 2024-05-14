@@ -152,7 +152,7 @@ export class GeneratePaletteComponent implements OnInit {
   }
 
   setClass(): string {
-    var num = Math.floor(12 / this.coloursAmount);
+    var num = Math.floor(12 / this.colours.length);
     return "col-sm-" + num + " text-center";
   }
 

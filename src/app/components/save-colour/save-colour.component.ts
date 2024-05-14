@@ -35,6 +35,11 @@ export class SaveColourComponent implements OnInit {
     return value;
   }
 
+  setClass(): string {
+    var num = Math.floor(12 / this.colours.length);
+    return "col-sm-" + num + " text-center";
+  }
+
   setBorderLeft(index: number): string {
     var value = 'none';
     if (index == 0)
