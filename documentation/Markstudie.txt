@@ -1,0 +1,27 @@
+Markstudie
+**********
+
+Een bekende webapplicatie voor het genereren van kleurenpaletten is coolors (https://coolors.co/e4572e-f0f66e-f0f8ea-a8c686-9d9c62). 
+
+1.1	Sterktes
+----------------
+	• Learnability: Het gebruik van coolors is voorspelbaar. Als je op “generate” klikt, krijg je onmiddellijk een kleurenpalet te zien. Als je met de cursor over een kleur hovert, krijg je enkele icoontjes te zien die acties voorstellen. De icoontjes die gebruikt worden zijn duidelijk en hebben geen uitleg nodig. Door ze op de kleur zelf te zetten, begrijp je dat de opties toegepast worden per kleur. Bovendien kan je de opties makkelijk uit testen en snel feedback krijgen, zonder je voortgang op de pagina te verliezen (bijvoorbeeld: het dubbele-pijl-icoontje indiceert al dat je de pijlen kan volgen, en klikken en slepen toont je meteen dat je de kleur aan het verplaatsen bent in het palet. Als dat niet is wat je wou doen, kan je de kleur gewoon terug plaatsen  memorability). 
+	• Efficiency: Op de spatiebalk drukken genereert meteen een nieuw palet, en de lock icoontjes en plus icoontjes staan de gebruiker toe om snel en gemakkelijk het palet aan te passen.
+
+1.2	Zwaktes
+---------------
+	• Learnability: Het is echter niet meteen duidelijk dat je op de spatiebalk moet drukken om kleuren te genereren. De hint in tekstvorm in de linkerbovenhoek is niet voldoende. De kleuren leiden je af van de tekst en door de vele icoontjes verwacht je niet dat er nog tekst zou staan om aan te geven hoe je de applicatie moet gebruiken.
+	• Efficiency: De applicatie heeft erg veel opties om het palet aan te passen. Vaak in het gebruik en hergebruik ervan moet de gebruiker even een optie uittesten om opnieuw te weten wat het doet. Dit neemt tijd in beslag en kan frustrerend zijn. De tooltip vertelt de gebruiker wel wat een knop doet, maar voor mensen die niet zo veel bezig zijn met kleurenpaletten en kleurentheorie is dit niet voldoende.
+
+1.3	Design trends
+----------------------
+Coolors maakt veelvuldig gebruik van icons om functies van de applicatie beschikbaar te maken. Een balk bovenaan toont verschillende icons om acties voor het gehele palet te representeren, en icons in de kleur zelf representeren acties voor die kleur binnen het palet. 
+
+Icons voor de kleur zelf zijn eerder universele icons: verwijder, contrast, iets dat een grid zal tonen, favoriet, versleep, kopieer, lock.	 
+
+Icons voor het hele palet zijn eerder unieke icons. De betekenis van de icons is niet meteen duidelijk, of ze representeren andere acties dan verwacht (bijvoorbeeld: het hamburger-icoontje is niet voor navigatie, maar eerder om uit een lijst van paletten een ander palet te selecteren en te importeren).
+
+
+1.4	Stijl
+--------------
+De applicatie maakt gebruikt van flat design. Waarschijnlijk is dit omdat de centrale functie van de applicatie is om kleurenpaletten te maken. Voor kleuren in de applicatie moet de focus dus liggen op de kleuren van de paletten: te veel details in design kunnen afleiden. Daarnaast wordt onze perceptie van een kleur beïnvloed door de kleuren eromheen. De gebruiker kan in de war raken door omringende kleuren en een palet dat omringd werd door 1 kleur op de ene pagina, kan er voor het menselijk oog anders uitzien als het omringd wordt door een andere kleur op een andere pagina.

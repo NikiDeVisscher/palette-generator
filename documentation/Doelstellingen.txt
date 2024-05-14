@@ -1,0 +1,15 @@
+Doelstellingen
+**************
+
+Deze applicatie heeft volgende doelstellingen:
+1) Genereren van kleurenpaletten: de applicatie laat de gebruiker toe willekeurige kleurenpaletten te genereren (volledig willekeurig of op basis van 1 kleur of op basis van opgeslagen palet). Er is een optie om het aantal kleuren te kiezen (minimum 3 en maximum 6). 
+
+--> Bij het openen van de applicatie komt de gebruiker meteen op een pagina terecht om snel een palet te genereren. Hij/zij moet enkel op een “regenerate” knop drukken om een ander palet te genereren, terwijl hij/zij op dezelfde pagina blijft. Een “start from colour” knop brengt de gebruiker naar een pagina om een kleur te selecteren via een colour picker, en een “generate” knop leidt terug naar de generate pagina, die nu de gekozen kleur bevat in het palet.
+
+2) Opslaan en bekijken van paletten: de gebruiker kan kiezen een palet op te slaan en kan opgeslagen paletten bekijken.
+
+--> Een “save” knop op de generate pagina brengt de gebruiker naar een pagina om het palet een naam te geven, en een tweede “save” knop slaat het palet op. Hierna wordt de gebruiker naar een pagina gebracht om alle opgeslagen paletten te bekijken. Een link op de header brengt de gebruiker ook naar die pagina om het even waar de gebruiker zich bevindt in de applicatie.
+
+--------
+
+In vergelijking met coolors worden lock- en add-icoontjes bij het genereren van paletten behouden. De vele andere icoontjes zijn echter niet nodig, en palette-acties worden beschikbaar gemaakt via knoppen met tekst, om duidelijker te omschrijven wat de acties zullen doen. Ook het flat design zal behouden worden, maar de wit- en grijstinten worden vervangen door enkele simpele kleuren. Dit omdat het palet niet het volledig scherm zal innemen, om rekening te houden met schermflexibiliteit, en dus moet leegte nog aangenaam gemaakt worden.
