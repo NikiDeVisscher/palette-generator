@@ -7,7 +7,7 @@ h3 {
 }
 
 .colour {
-    width: 380px;
+    /* width: 380px; */
     height: 150px;
 }
 
@@ -33,7 +33,7 @@ h3 {
     border-radius: 30px;
 }
 
-.colourActions {
+/* .colourActions {
     width: 230px;
 }
 
@@ -43,7 +43,7 @@ h3 {
 
 .colourEmpty {
     width: 25px;
-}
+} */
 
 .row {
     margin-bottom: 20px;

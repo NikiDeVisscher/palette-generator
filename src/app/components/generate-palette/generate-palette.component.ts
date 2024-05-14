@@ -151,6 +151,11 @@ export class GeneratePaletteComponent implements OnInit {
     return value;
   }
 
+  setClass(): string {
+    var num = Math.floor(12 / this.coloursAmount);
+    return "col-sm-" + num + " text-center";
+  }
+
   optionButtonColor(option: number): string {
     if (this.coloursAmount == option)
       return "#70B8A2";
