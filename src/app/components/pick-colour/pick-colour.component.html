@@ -1,1 +1,38 @@
-<p>pick-colour works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col d-flex flex-row justify-content-center">
+            <input id="picker"
+                [(colorPicker)]="colourVal" 
+                [cpDialogDisplay]="'inline'" 
+                [cpToggle]="true" 
+                [cpWidth]="'500px'" 
+                [cpAlphaChannel]="'disabled'"
+                [cpOutputFormat]="'rgba'"
+                [cpDisableInput]="true"/>
+        </div>
+    </div>
+    <div class="row d-flex flex-row justify-content-center">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h3>{{ colourVal }}</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="r">R</label>
+                    <input type="text" id="r" class="rgb" />
+                </div>
+                <div class="col-sm-4">
+                    <label for="g">G</label>
+                    <input type="text" id="g" class="rgb" />
+                </div>
+                <div class="col-sm-4">
+                    <label for="b">B</label>
+                    <input type="text" id="b" class="rgb" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

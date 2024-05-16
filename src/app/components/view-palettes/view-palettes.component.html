@@ -1,49 +1,49 @@
 <div class="container-fluid">
-<ng-container *ngFor="let palette of palettes; index as i">
-    <div class="container item" (click)="onView(palette.id)">
-        <div class="row d-flex align-items-center">
-            <div class="col-sm-6 colours">
-                <div class="row">
-                    <ng-container *ngFor="let colour of palette.colours">
-                        <div [ngStyle]="{backgroundColor: setColour(colour)}" [ngClass]="setClass(palette)"></div>
-                    </ng-container>
-                </div>
-            </div>
-            <div class="col-sm-6 actions">
-                <div class="row">
-                    <div class="col-sm-10 name">
-                        <input type="text" name="editName" id="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
-                        <ng-template #displayName>
-                            <p>{{ palette.name }}</p>
-                        </ng-template>
+    <ng-container *ngFor="let palette of palettes; index as i">
+        <div class="container item" (click)="onView(palette.id)">
+            <div class="row d-flex align-items-center">
+                <div class="col-sm-6 colours">
+                    <div class="row">
+                        <ng-container *ngFor="let colour of palette.colours">
+                            <div [ngStyle]="{backgroundColor: setColour(colour)}" [ngClass]="setClass(palette)"></div>
+                        </ng-container>
                     </div>
-                    <div class="col-sm-1">
-                        <button mat-icon-button class="edit" (click)="onSave(i, $event)" *ngIf="palette.id == editing; else editButton">
-                            <mat-icon>save</mat-icon>
-                        </button>
-                        <ng-template #editButton>
-                            <button mat-icon-button class="edit" (click)="onEdit(palette.id, i, $event)">
-                                <mat-icon>edit</mat-icon>
+                </div>
+                <div class="col-sm-6 actions">
+                    <div class="row">
+                        <div class="col-sm-10 name">
+                            <input type="text" name="editName" id="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
+                            <ng-template #displayName>
+                                <p>{{ palette.name }}</p>
+                            </ng-template>
+                        </div>
+                        <div class="col-sm-1">
+                            <button mat-icon-button class="edit" (click)="onSave(i, $event)" *ngIf="palette.id == editing; else editButton">
+                                <mat-icon>save</mat-icon>
                             </button>
-                        </ng-template>
-                    </div>
-                    <div class="col-sm-1">
-                        <button mat-icon-button class="edit" (click)="onDelete(palette.id, $event)">
-                            <mat-icon>delete</mat-icon>
-                        </button>
+                            <ng-template #editButton>
+                                <button mat-icon-button class="edit" (click)="onEdit(palette.id, i, $event)">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </ng-template>
+                        </div>
+                        <div class="col-sm-1">
+                            <button mat-icon-button class="edit" (click)="onDelete(palette.id, $event)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</ng-container>
+    </ng-container>
 
-<div id="display" [style.display]="isVisible ? 'block' : 'none'">
-    <router-outlet></router-outlet>
-    <div class="row">
-        <div class="col" class="d-flex flex-row justify-content-center">
-            <button class="button-primary" (click)="onClose()">Close</button>
+    <div id="display" [style.display]="isVisible ? 'block' : 'none'">
+        <router-outlet></router-outlet>
+        <div class="row">
+            <div class="col" class="d-flex flex-row justify-content-center">
+                <button class="button-primary" (click)="onClose()">Close</button>
+            </div>
         </div>
     </div>
-</div>
 </div>

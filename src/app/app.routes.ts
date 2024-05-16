@@ -3,9 +3,11 @@ import { GeneratePaletteComponent } from './components/generate-palette/generate
 import { SaveColourComponent } from './components/save-colour/save-colour.component';
 import { ViewPalettesComponent } from './components/view-palettes/view-palettes.component';
 import { DisplayPaletteComponent } from './components/display-palette/display-palette.component';
+import { PickColourComponent } from './components/pick-colour/pick-colour.component';
 
 export const routes: Routes = [
     {path: '', component: GeneratePaletteComponent},
+    {path: 'pick', component: PickColourComponent},
     {path: 'save', component: SaveColourComponent},
     {path: 'view', component: ViewPalettesComponent, children: [
         {path: ':id', component: DisplayPaletteComponent}

@@ -1,0 +1,12 @@
+#picker {
+    display: none;
+}
+
+.rgb {
+    width: 50px;
+    margin-left: 6px;
+}
+
+.settings {
+    width: 500px;
+}
