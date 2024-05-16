@@ -31,12 +31,12 @@
 </div>   
 <div class="row" class="actionButtons">
     <div class="col" class="d-flex flex-row justify-content-center">
-        <button mat-flat-button color="primary" class="actionButton" (click)="generatePalette()">regenerate<mat-icon>refresh</mat-icon></button>
+        <button class="button-variant" (click)="generatePalette()"><span>regenerate</span><mat-icon>refresh</mat-icon></button>
     </div>
     <div class="col" class="d-flex flex-row justify-content-center">
-        <button mat-flat-button color="accent" class="actionButton">start from colour</button>
+        <button class="button-primary">start from colour</button>
     </div>
     <div class="col" class="d-flex flex-row justify-content-center">
-        <button mat-flat-button color="accent" class="actionButton" (click)="onSave()">save</button>
+        <button class="button-secondary" (click)="onSave()">save</button>
     </div>
 </div>

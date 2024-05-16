@@ -1,13 +1,8 @@
-.actionButtons>div>button {
-    width: 200px;
-}
-
 h3 {
     color: #06373E;
 }
 
 .colour {
-    /* width: 380px; */
     height: 150px;
 }
 
@@ -27,23 +22,6 @@ h3 {
     color: #F0F0F0;
     text-align: center;
 }
-
-.actionButton {
-    margin: 5px 0;
-    border-radius: 30px;
-}
-
-/* .colourActions {
-    width: 230px;
-}
-
-.colourAdd {
-    width: 50px;
-}
-
-.colourEmpty {
-    width: 25px;
-} */
 
 .row {
     margin-bottom: 20px;

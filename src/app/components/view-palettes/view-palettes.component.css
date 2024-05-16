@@ -39,10 +39,6 @@
     z-index: 1000;
 }
 
-button {
-    width: 200px;
-}
-
 #editName {
     width: 90%;
     height: 40px;

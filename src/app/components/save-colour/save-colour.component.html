@@ -17,18 +17,18 @@
                 <input type="text" name="name" (input)="onEnterName($event)"/>
             </div>
             <div class="col" class="d-flex flex-row justify-content-center">
-                <p id="warning">{{ warning }}</p>
+                <p class="warning">{{ warning }}</p>
             </div>
         </form>
     </div>
 
     <div class="row">
-        <div class="actionButtons">
+        <div>
         <div class="col" class="d-flex flex-row justify-content-center">
-            <button mat-flat-button color="primary" class="actionButton" (click)="onSave()">save</button>
+            <button class="button-secondary" (click)="onSave()">save</button>
         </div>
         <div class="col" class="d-flex flex-row justify-content-center">
-            <button mat-flat-button color="accent" class="actionButton" (click)="onCancel()">cancel</button>
+            <button class="button-primary" (click)="onCancel()">cancel</button>
         </div>
         </div>
     </div>
