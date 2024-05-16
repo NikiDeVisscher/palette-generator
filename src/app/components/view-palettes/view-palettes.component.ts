@@ -52,11 +52,12 @@ export class ViewPalettesComponent implements OnInit {
     this.router.navigate(['view/' + index]);
   }
 
-  onEdit(index: string | undefined, event: Event): void {
+  onEdit(index: string | undefined, numIndex: number, event: Event): void {
     event.stopPropagation();
     if (this.editing)
       return;
 
+    this.newName = this.palettes[numIndex].name!;
     index = index? index : "0";
     this.editing = index;
   }

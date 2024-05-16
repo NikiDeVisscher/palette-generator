@@ -50,7 +50,7 @@
     },
     {
       "id": "24b4",
-      "name": "",
+      "name": "YAY",
       "colours": [
         {
           "hexCode": "A65B70",
@@ -92,7 +92,7 @@
     },
     {
       "id": "554a",
-      "name": "ehlllo",
+      "name": "hello",
       "colours": [
         {
           "hexCode": "F3243E",
@@ -123,6 +123,36 @@
           "rValue": "64",
           "gValue": "182",
           "bValue": "11"
+        }
+      ]
+    },
+    {
+      "id": "46a5",
+      "name": "Swamp in the night",
+      "colours": [
+        {
+          "hexCode": "460C77",
+          "rValue": "70",
+          "gValue": "12",
+          "bValue": "119"
+        },
+        {
+          "hexCode": "48A87C",
+          "rValue": "72",
+          "gValue": "168",
+          "bValue": "124"
+        },
+        {
+          "hexCode": "BFEED7",
+          "rValue": "191",
+          "gValue": "238",
+          "bValue": "215"
+        },
+        {
+          "hexCode": "A6EA9D",
+          "rValue": "166",
+          "gValue": "234",
+          "bValue": "157"
         }
       ]
     }
