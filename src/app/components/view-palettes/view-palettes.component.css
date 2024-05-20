@@ -1,3 +1,14 @@
+:host {
+    background-color: #06373E;
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+
+.text {
+    color: #70B8A2;
+}
+
 .colour {
     height: 120px;
 }
@@ -9,7 +20,7 @@
 .item {
     display: block;
     background-color: #70B8A2;
-    margin: 5px auto;
+    margin: 10px auto;
     border-radius: 20px;
     padding: 0 30px;
 }

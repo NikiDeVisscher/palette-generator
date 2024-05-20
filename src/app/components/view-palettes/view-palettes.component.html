@@ -1,4 +1,11 @@
 <div class="container-fluid">
+    <div class="row">
+        <div class="col d-flex flex-row justify-content-center">
+        <p class="text">
+            View your saved palettes, edit their names or delete them.
+        </p>
+    </div>
+    </div>
     <ng-container *ngFor="let palette of palettes; index as i">
         <div class="container item" (click)="onView(palette.id)">
             <div class="row d-flex align-items-center">
@@ -11,7 +18,7 @@
                 </div>
                 <div class="col-sm-6 actions">
                     <div class="row">
-                        <div class="col-sm-10 name">
+                        <div class="col-sm-9 name">
                             <input type="text" name="editName" id="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
                             <ng-template #displayName>
                                 <p>{{ palette.name }}</p>
@@ -30,6 +37,11 @@
                         <div class="col-sm-1">
                             <button mat-icon-button class="edit" (click)="onDelete(palette.id, $event)">
                                 <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button mat-icon-button class="edit">
+                                <mat-icon>visibility</mat-icon>
                             </button>
                         </div>
                     </div>

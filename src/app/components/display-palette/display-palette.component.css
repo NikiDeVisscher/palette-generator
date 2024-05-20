@@ -1,6 +1,9 @@
 .colour {
-    width: 200px;
-    height: 200px;
+    height: 150px;
+}
+
+.copy {
+    color: #06373E;
 }
 
 .palette {
@@ -12,5 +15,27 @@ h2 {
 }
 
 h3 {
+    display: block;
+    margin: 0 10px;
     color: #06373E;
 }
+
+.clipboard {
+    display: flex;
+    align-items: center;
+}
+
+.clipboard>p {
+    margin: 0;
+    color: #06373E;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

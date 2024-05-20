@@ -6,18 +6,27 @@ import { Colour } from '../../models/colour.model';
 import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-display-palette',
   standalone: true,
-  imports: [CommonModule, HexPipe, MatButtonModule],
+  imports: [CommonModule, HexPipe, MatButtonModule, MatIconModule],
   templateUrl: './display-palette.component.html',
   styleUrl: './display-palette.component.css'
 })
 export class DisplayPaletteComponent implements OnInit{
   palette: Palette = new Palette();
+  copied: boolean = false;
+  fadeOut: boolean = false;
 
-  constructor(private paletteService: PaletteService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private paletteService: PaletteService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private clipboard: Clipboard
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -41,5 +50,33 @@ export class DisplayPaletteComponent implements OnInit{
     value += colour.gValue.toString() + ', ';
     value += colour.bValue.toString() + ')';
     return value;
+  }
+
+  dump(): string
+  {
+    this.copied = true;
+      var str = '"' + this.palette.name! + '": [\n ';
+      this.palette.colours.forEach(colour => {
+          str += '{\n  "hex": "#' + colour.hexCode + '",\n  ';
+          str += '"rValue": "' + colour.rValue + '",\n  ';
+          str += '"gValue": "' + colour.gValue + '",\n  ';
+          str += '"bValue": "' + colour.bValue + '"\n },\n ';
+      });
+      return str + ']';
+  }
+
+  onCopy(): void {
+    var text = this.dump();
+    this.clipboard.copy(text);
+    this.fadeOut = false;
+
+    setTimeout(() => {
+      this.fadeOut = true;
+    }, 3000);
+
+    setTimeout(() => {
+      this.copied = false;
+      this.fadeOut = false;
+    }, 2000);
   }
 }

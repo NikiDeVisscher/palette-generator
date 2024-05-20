@@ -26,15 +26,24 @@
         <button *ngFor="let option of colourOptions" 
                 class="option" 
                 [style.background-color]="optionButtonColor(option)" 
-                (click)="onSelectOption(option)">{{ option }}</button>
+                (click)="onSelectOption(option)">
+                {{ option }}
+        </button>
+    </div>
+</div>   
+<div class="row">
+    <div class="col d-flex flex-row justify-content-center">
+        <p class="instruction">
+            Set the amount of colours you want to generate.
+        </p>
     </div>
 </div>   
 <div class="row">
     <div class="col" class="d-flex flex-row justify-content-center">
-        <button class="button-variant" (click)="generatePalette()"><span>regenerate</span><mat-icon>refresh</mat-icon></button>
+        <button class="button-primary" (click)="generatePalette()"><span>regenerate</span><mat-icon>refresh</mat-icon></button>
     </div>
     <div class="col" class="d-flex flex-row justify-content-center">
-        <button class="button-primary">start from colour</button>
+        <button class="button-variant">start from colour</button>
     </div>
     <div class="col" class="d-flex flex-row justify-content-center">
         <button class="button-secondary" (click)="onSave()">save</button>

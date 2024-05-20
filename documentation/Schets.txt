@@ -1,0 +1,16 @@
+Schets
+******
+
+Bij het bespreken van de schets met medestudenten, kreeg ik de volgende opmerkingen:
+	• Overal homepage button, met andere kleur op de home pagina
+		o Zal ik toepassen
+	• Export functie toevoegen
+		o Dit zal ik niet toevoegen, maar ik zal er wel voor zorgen dat bij het bekijken van een palet de hex codes duidelijk zijn zodat de gebruiker ze kan selecteren en kopiëren
+	• Verwijderen/naam bewerken van een palet
+		o Gebruiken, zal ik toevoegen bij paletten overview
+	• Een plus knop toevoegen die een kleur kan toevoegen
+		o Zal ik toevoegen bij de generate pagina, tussen 2 kleuren
+	• Home en generate samen, geen verschillende pagina’s
+		o Zal ik gebruiken, zo moet de gebruiker minder zoeken in de applicatie
+	• Een lock knop toevoegen per kleur zodat die kleur wordt bewaard bij het opnieuw genereren van een palet
+		o Zal ik toepassen en onder elke kleur op de generate pagina plaatsen

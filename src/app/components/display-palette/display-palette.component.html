@@ -1,13 +1,24 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col" class="d-flex flex-row justify-content-center">
+        <div class="col clipboard">
+            <button mat-icon-button class="copy" (click)="onCopy()">
+                <mat-icon>content_copy</mat-icon>
+            </button>
+
+
+            <p [style.display]="copied ? 'block' : 'none'" [class.fade-out]="fadeOut">Copied to clipboard!</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col d-flex flex-row justify-content-center">
             <h2>{{ palette.name }}</h2>
         </div>
     </div>
     <div class="row palette">
-        <div class="col" class="d-flex flex-row justify-content-center">
+        <div class="d-flex flex-row justify-content-center">
                 <ng-container *ngFor="let colour of palette.colours">
-                    <div class="text-center">
+                    <div class="text-center col">
                         <h3>{{ colour.hexCode|hex }}</h3>
                         <div [ngStyle]="{backgroundColor: setColour(colour)}" class="colour"></div>
                     </div>

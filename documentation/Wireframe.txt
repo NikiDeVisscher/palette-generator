@@ -1,0 +1,16 @@
+Wireframe
+**********
+
+Bij het testen van de wireframe op familieleden, heb ik volgende opmerkingen gekregen:
+	• “Start from colour” knop verbergen als er al werd gestart van een kleur, zodat er geen verwarring ontstaat over wat de knop doet
+		o In plaats van de knop te verbergen, zal ik de tekst op de knop laten veranderen in “start from different colour”
+	• Geen uitroeptekens bij tekst op knoppen, het voelt vreemd aan
+		o Deze feedback kan ik zeker toepassen
+	• Een uitleg toevoegen over wat de knoppen van nummers 3 tot 6 doen
+		o Ik kan een tekst eronder plaatsen die de gebruiker een hint geeft over wat de knoppen doen
+	• Bij paletten overview een knop zetten met een kopie icoontje dat de gebruiker suggereert om de hex codes te kopiëren naar het klembord
+		o Ik moet uitzoeken of het mogelijk is om tekst te kopiëren naar het klembord in Angular, maar als dat lukt kan ik een dergelijke knop toevoegen. Ik zou het wel in het palet detail venster zetten, en bij de paletten overview pagina bij elk palet een “view” icoontje toevoegen dat de gebruiker duidelijk maakt dat het palet in detail kan bekeken worden
+	• Meer uitleg in tekstvorm, maar niet te veel tekst
+		o Ik zal hier en daar een zin schrijven die de gebruiker een hint geeft over de functionaliteiten van de knoppen en pagina’s
+
+Bij het testen maakte ik de observatie dat de “start from colour” knop meer opviel dan de “regenerate” knop, terwijl die laatste meer gebruikt hoort te worden. Ik zal de kleuren van de knoppen omwisselen.
