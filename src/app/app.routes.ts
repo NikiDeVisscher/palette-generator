@@ -7,7 +7,6 @@ import { PickColourComponent } from './components/pick-colour/pick-colour.compon
 
 export const routes: Routes = [
     {path: '', component: GeneratePaletteComponent},
-    {path: 'pick', component: PickColourComponent},
     {path: 'save', component: SaveColourComponent},
     {path: 'view', component: ViewPalettesComponent, children: [
         {path: ':id', component: DisplayPaletteComponent}

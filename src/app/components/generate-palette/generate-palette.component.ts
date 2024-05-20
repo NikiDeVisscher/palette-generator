@@ -19,6 +19,8 @@ import { PickColourComponent } from '../pick-colour/pick-colour.component';
 })
 export class GeneratePaletteComponent implements OnInit {
   @Input() pickedColour: Colour = new Colour;
+  pick: boolean = false;
+  hasPicked: boolean = false;
   palette: Palette = new Palette;
   colours: Colour[] = new Array;
   locks: boolean[] = new Array;
@@ -27,7 +29,6 @@ export class GeneratePaletteComponent implements OnInit {
   colourOptions: number[] = new Array;
   min: number = 3;
   max: number = 6;
-  pick: boolean = false;
 
   constructor(private paletteService: PaletteService, private colourService: ColoursService, private router: Router) {}
 
@@ -192,5 +193,24 @@ export class GeneratePaletteComponent implements OnInit {
   onSave(): void {
     this.colourService.saveLocks(this.locks);
     this.router.navigate(['/save']);
+  }
+
+  onCancelMessage(cancelPick: boolean): void {
+    if (cancelPick)
+      this.pick = false;
+  }
+
+  onColourMessage(newColour: Colour): void {
+    this.colours[0] = newColour;
+    this.coloursAmount = this.min;
+    this.locks = new Array;
+    this.locks.push(true);
+    for (var i = 1; i < this.coloursAmount; i++)
+    {
+      this.locks.push(false);
+    }
+    this.generatePalette();
+    this.pick = false;
+    this.hasPicked = true;
   }
 }

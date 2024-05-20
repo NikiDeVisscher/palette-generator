@@ -1,10 +1,9 @@
 import { CommonModule, UpperCasePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule } from '@angular/router';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { Colour } from '../../models/colour.model';
-import { ColoursService } from '../../services/colours.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,9 +14,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pick-colour.component.css'
 })
 export class PickColourComponent implements OnInit {
+  @Output() cancelMessage = new EventEmitter<boolean>();
+  @Output() colourMessage = new EventEmitter<Colour>();
   colour: Colour = new Colour;
 
-  constructor(private colourService: ColoursService, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.colour.hexCode = "#CA4D2D";
@@ -41,7 +42,7 @@ export class PickColourComponent implements OnInit {
   }
 
   hexToRgb(hex: string): { r: number, g: number, b: number } {
-    hex = hex.replace(/^#/, '');
+    hex = hex.replace('#', '');
   
     var bigint = parseInt(hex, 16);
     var r = (bigint >> 16) & 255;
@@ -52,6 +53,12 @@ export class PickColourComponent implements OnInit {
   }
 
   onGenerate(): void {
+    this.colour.hexCode = this.colour.hexCode.replace('#', '');
+    this.colour.hexCode = this.colour.hexCode.toUpperCase();
+    this.colourMessage.emit(this.colour);
+  }
 
+  onCancelPick(): void {
+    this.cancelMessage.emit(true);
   }
 }

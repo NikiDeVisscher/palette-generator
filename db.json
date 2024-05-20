@@ -179,6 +179,30 @@
           "bValue": "105"
         }
       ]
+    },
+    {
+      "id": "dce7",
+      "name": "Ugly fuck",
+      "colours": [
+        {
+          "hexCode": "312DCA",
+          "rValue": "49",
+          "gValue": "45",
+          "bValue": "202"
+        },
+        {
+          "hexCode": "D75A02",
+          "rValue": "215",
+          "gValue": "90",
+          "bValue": "2"
+        },
+        {
+          "hexCode": "78DADD",
+          "rValue": "120",
+          "gValue": "218",
+          "bValue": "221"
+        }
+      ]
     }
   ]
 }
