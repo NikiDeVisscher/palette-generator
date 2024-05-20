@@ -3,10 +3,19 @@
 }
 
 .rgb {
-    width: 50px;
+    width: 60px;
     margin-left: 6px;
+    color: #06373E;
 }
 
 .settings {
     width: 500px;
+}
+
+#showColour {
+    height: 70px;
+}
+
+.row {
+    margin: 20px auto;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, input } from '@angular/core';
 import { Palette } from '../../models/palette.model';
 import { PaletteService } from '../../services/palette.service';
 import { Colour } from '../../models/colour.model';
@@ -8,15 +8,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ColoursService } from '../../services/colours.service';
 import { Router } from '@angular/router';
+import { PickColourComponent } from '../pick-colour/pick-colour.component';
 
 @Component({
   selector: 'app-generate-palette',
   standalone: true,
-  imports: [CommonModule, HexPipe, MatButtonModule, MatIconModule],
+  imports: [CommonModule, HexPipe, MatButtonModule, MatIconModule, PickColourComponent],
   templateUrl: './generate-palette.component.html',
   styleUrl: './generate-palette.component.css'
 })
 export class GeneratePaletteComponent implements OnInit {
+  @Input() pickedColour: Colour = new Colour;
   palette: Palette = new Palette;
   colours: Colour[] = new Array;
   locks: boolean[] = new Array;
@@ -25,6 +27,7 @@ export class GeneratePaletteComponent implements OnInit {
   colourOptions: number[] = new Array;
   min: number = 3;
   max: number = 6;
+  pick: boolean = false;
 
   constructor(private paletteService: PaletteService, private colourService: ColoursService, private router: Router) {}
 
@@ -180,6 +183,10 @@ export class GeneratePaletteComponent implements OnInit {
     }
     this.coloursAmount = option;
     this.generatePalette();
+  }
+
+  onStartFromColour(): void {
+    this.pick = true;
   }
 
   onSave(): void {
