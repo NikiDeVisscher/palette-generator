@@ -203,6 +203,30 @@
           "bValue": "221"
         }
       ]
+    },
+    {
+      "id": "566c",
+      "name": "duck",
+      "colours": [
+        {
+          "hexCode": "DFE931",
+          "rValue": "223",
+          "gValue": "233",
+          "bValue": "49"
+        },
+        {
+          "hexCode": "F1C615",
+          "rValue": "241",
+          "gValue": "198",
+          "bValue": "21"
+        },
+        {
+          "hexCode": "BE71E5",
+          "rValue": "190",
+          "gValue": "113",
+          "bValue": "229"
+        }
+      ]
     }
   ]
 }

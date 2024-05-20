@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, input } from '@angular/core';
 import { Palette } from '../../models/palette.model';
-import { PaletteService } from '../../services/palette.service';
 import { Colour } from '../../models/colour.model';
 import { CommonModule } from '@angular/common';
 import { HexPipe } from '../../pipes/hex.pipe';
@@ -30,7 +29,7 @@ export class GeneratePaletteComponent implements OnInit {
   min: number = 3;
   max: number = 6;
 
-  constructor(private paletteService: PaletteService, private colourService: ColoursService, private router: Router) {}
+  constructor(private colourService: ColoursService, private router: Router) {}
 
   ngOnInit(): void {
     for (var i = this.min; i <= this.max; i++)

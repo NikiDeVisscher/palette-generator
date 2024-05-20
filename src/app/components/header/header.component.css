@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #06373E;
+    border-bottom: 1px solid #7cc39d;
+}
+
+button {
+    padding: 0 30px;
+    border-radius: 0;
+}
+  
+.home {
+    background-color: #7cc39d;
+    display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.view-palettes {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #7cc39d;
+}
+  
