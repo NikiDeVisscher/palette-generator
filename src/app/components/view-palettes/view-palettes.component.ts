@@ -40,6 +40,8 @@ export class ViewPalettesComponent implements OnInit {
   }
 
   setClass(palette: Palette): string {
+    if (palette.colours.length == 5)
+      return "five colour";
     var num = Math.floor(12 / palette.colours.length);
     return "col-sm-" + num + " colour";
   }

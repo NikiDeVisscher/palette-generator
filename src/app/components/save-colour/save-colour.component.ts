@@ -36,6 +36,8 @@ export class SaveColourComponent implements OnInit {
   }
 
   setClass(): string {
+    if (this.colours.length == 5)
+      return "five text-center";
     var num = Math.floor(12 / this.colours.length);
     return "col-sm-" + num + " text-center";
   }

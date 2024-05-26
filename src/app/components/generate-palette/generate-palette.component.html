@@ -1,5 +1,5 @@
 <div class="container" [hidden]="pick">
-    <div class="row">
+    <div class="row top">
         <ng-container *ngFor="let colour of colours; index as i">
             <div [ngClass]="setClass()" style="padding: 0;">
                 <h3>{{ colour.hexCode|hex }}</h3>
