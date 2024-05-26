@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Colour } from '../../models/colour.model';
 import { Palette } from '../../models/palette.model';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,11 +6,12 @@ import { PaletteService } from '../../services/palette.service';
 import { Router, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { SetRGBpipePipe } from '../../pipes/set-rgbpipe.pipe';
 
 @Component({
   selector: 'app-view-palettes',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule, FormsModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule, FormsModule, SetRGBpipePipe],
   templateUrl: './view-palettes.component.html',
   styleUrl: './view-palettes.component.css'
 })
@@ -29,14 +29,6 @@ export class ViewPalettesComponent implements OnInit {
         this.palettes = response;
       }
     });
-  }
-
-  setColour(colour: Colour): string {
-    var value = 'rgb(';
-    value += colour.rValue + ', ';
-    value += colour.gValue + ', ';
-    value += colour.bValue + ')';
-    return value;
   }
 
   setClass(palette: Palette): string {

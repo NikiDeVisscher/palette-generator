@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Palette } from '../../models/palette.model';
 import { PaletteService } from '../../services/palette.service';
 import { CommonModule } from '@angular/common';
-import { Colour } from '../../models/colour.model';
 import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { MatIconModule } from '@angular/material/icon';
+import { SetRGBpipePipe } from '../../pipes/set-rgbpipe.pipe';
 
 @Component({
   selector: 'app-display-palette',
   standalone: true,
-  imports: [CommonModule, HexPipe, MatButtonModule, MatIconModule],
+  imports: [CommonModule, HexPipe, SetRGBpipePipe, MatButtonModule, MatIconModule],
   templateUrl: './display-palette.component.html',
   styleUrl: './display-palette.component.css'
 })
@@ -23,8 +23,7 @@ export class DisplayPaletteComponent implements OnInit{
 
   constructor(
     private paletteService: PaletteService, 
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private route: ActivatedRoute,
     private clipboard: Clipboard
   ) {}
 
@@ -42,14 +41,6 @@ export class DisplayPaletteComponent implements OnInit{
       },
       error: (error) => console.log('error: ', error)
     });
-  }
-
-  setColour(colour: Colour): string {
-    var value = 'rgb(';
-    value += colour.rValue.toString() + ', ';
-    value += colour.gValue.toString() + ', ';
-    value += colour.bValue.toString() + ')';
-    return value;
   }
 
   dump(): string

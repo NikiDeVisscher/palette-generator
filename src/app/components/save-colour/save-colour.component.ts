@@ -7,11 +7,12 @@ import { HexPipe } from '../../pipes/hex.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { PaletteService } from '../../services/palette.service';
+import { SetRGBpipePipe } from '../../pipes/set-rgbpipe.pipe';
 
 @Component({
   selector: 'app-save-colour',
   standalone: true,
-  imports: [CommonModule, HexPipe, MatButtonModule],
+  imports: [CommonModule, HexPipe, SetRGBpipePipe, MatButtonModule],
   templateUrl: './save-colour.component.html',
   styleUrl: './save-colour.component.css'
 })
@@ -25,14 +26,6 @@ export class SaveColourComponent implements OnInit {
 
   ngOnInit(): void {
     this.colours = this.colourService.getColours();
-  }
-
-  setColour(colour: Colour): string {
-    var value = 'rgb(';
-    value += colour.rValue + ', ';
-    value += colour.gValue + ', ';
-    value += colour.bValue + ')';
-    return value;
   }
 
   setClass(): string {

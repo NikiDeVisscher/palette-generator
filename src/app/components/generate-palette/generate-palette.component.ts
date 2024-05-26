@@ -8,11 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { ColoursService } from '../../services/colours.service';
 import { Router } from '@angular/router';
 import { PickColourComponent } from '../pick-colour/pick-colour.component';
+import { SetRGBpipePipe } from '../../pipes/set-rgbpipe.pipe';
 
 @Component({
   selector: 'app-generate-palette',
   standalone: true,
-  imports: [CommonModule, HexPipe, MatButtonModule, MatIconModule, PickColourComponent],
+  imports: [CommonModule, HexPipe, SetRGBpipePipe, MatButtonModule, MatIconModule, PickColourComponent],
   templateUrl: './generate-palette.component.html',
   styleUrl: './generate-palette.component.css'
 })
@@ -112,7 +113,7 @@ export class GeneratePaletteComponent implements OnInit {
     }
   }
 
-  generatePalette() { //to add: check if no double colours
+  generatePalette() {
     this.colourService.resetColours();
 
     for (var i = 0; i < this.coloursAmount; i++)
@@ -144,14 +145,6 @@ export class GeneratePaletteComponent implements OnInit {
   toHex(num: number): string {
     var hex = num.toString(16);
     return hex.length === 1 ? '0' + hex : hex;
-  }
-
-  setColour(colour: Colour): string {
-    var value = 'rgb(';
-    value += colour.rValue + ', ';
-    value += colour.gValue + ', ';
-    value += colour.bValue + ')';
-    return value;
   }
 
   setClass(): string {

@@ -3,7 +3,7 @@
             <ng-container *ngFor="let colour of colours; index as i">
                 <div [ngClass]="setClass()" style="padding: 0;">
                     <h3>{{ colour.hexCode|hex }}</h3>
-                    <div [ngStyle]="{backgroundColor: setColour(colour), borderLeft: setBorderLeft(i), borderRight: setBorderRight(i)}" class="colour"></div>
+                    <div [ngStyle]="{backgroundColor: colour|setRGBpipe, borderLeft: setBorderLeft(i), borderRight: setBorderRight(i)}" class="colour"></div>
                 </div>
             </ng-container>
     </div>
