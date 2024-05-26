@@ -1,7 +1,7 @@
 import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { Colour } from '../../models/colour.model';
 import { FormsModule } from '@angular/forms';

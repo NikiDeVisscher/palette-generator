@@ -21,19 +21,10 @@ export class PaletteService {
   }
 
   addPalette(palette: Palette): Observable<Palette> {
-    /*var tempPalettes = new Array();
-    tempPalettes.push(palette);
-    this.palettes.forEach(aPalette => {
-      tempPalettes.push(aPalette);
-    });
-
-    this.palettes = new Array();
-    this.palettes = tempPalettes;*/
     const url = 'http://localhost:3000/palettes';
     return this.http.post<Palette>(url, palette);
   }
 
-  //needed?
   changeName(newName: {name: string}, id: string): Observable<Palette> {
     const url = 'http://localhost:3000/palettes/' + id;
     return this.http.patch<Palette>(url, newName);

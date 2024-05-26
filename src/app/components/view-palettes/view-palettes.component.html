@@ -19,7 +19,7 @@
                 <div class="col-sm-6 actions">
                     <div class="row">
                         <div class="col-sm-9 name">
-                            <input type="text" name="editName" id="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
+                            <input type="text" name="editName" id="editName" class="editName" *ngIf="palette.id == editing; else displayName" [(ngModel)]="newName" />
                             <ng-template #displayName>
                                 <p>{{ palette.name }}</p>
                             </ng-template>

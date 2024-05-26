@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Palette } from '../../models/palette.model';
 import { Colour } from '../../models/colour.model';
 import { CommonModule } from '@angular/common';

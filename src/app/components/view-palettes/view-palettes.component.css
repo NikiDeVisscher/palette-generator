@@ -23,10 +23,14 @@
 
 .item {
     display: block;
-    background-color: #70B8A2;
     margin: 10px auto;
     border-radius: 20px;
     padding: 0 30px;
+    transition: background-color 0.5s ease; /* source: https://www.w3schools.com/css/css3_transitions.asp */
+}
+
+.item:hover {
+    background-color: #70B8A2;
 }
 
 .name {
@@ -39,6 +43,10 @@
     text-align: center;
     vertical-align: middle;
     color: #06373E;
+}
+
+.editName {
+    text-align: center;
 }
 
 #display {

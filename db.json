@@ -49,50 +49,8 @@
       ]
     },
     {
-      "id": "24b4",
-      "name": "YAY",
-      "colours": [
-        {
-          "hexCode": "A65B70",
-          "rValue": "166",
-          "gValue": "91",
-          "bValue": "112"
-        },
-        {
-          "hexCode": "915C6B",
-          "rValue": "145",
-          "gValue": "92",
-          "bValue": "107"
-        },
-        {
-          "hexCode": "AA3681",
-          "rValue": "170",
-          "gValue": "54",
-          "bValue": "129"
-        },
-        {
-          "hexCode": "B9AF22",
-          "rValue": "185",
-          "gValue": "175",
-          "bValue": "34"
-        },
-        {
-          "hexCode": "2CDADB",
-          "rValue": "44",
-          "gValue": "218",
-          "bValue": "219"
-        },
-        {
-          "hexCode": "731680",
-          "rValue": "115",
-          "gValue": "22",
-          "bValue": "128"
-        }
-      ]
-    },
-    {
       "id": "554a",
-      "name": "hello",
+      "name": "Gathering",
       "colours": [
         {
           "hexCode": "F3243E",
@@ -157,56 +115,8 @@
       ]
     },
     {
-      "id": "d730",
-      "name": "aaaa",
-      "colours": [
-        {
-          "hexCode": "65A786",
-          "rValue": "101",
-          "gValue": "167",
-          "bValue": "134"
-        },
-        {
-          "hexCode": "DF4EDC",
-          "rValue": "223",
-          "gValue": "78",
-          "bValue": "220"
-        },
-        {
-          "hexCode": "C51069",
-          "rValue": "197",
-          "gValue": "16",
-          "bValue": "105"
-        }
-      ]
-    },
-    {
-      "id": "dce7",
-      "name": "Ugly fuck",
-      "colours": [
-        {
-          "hexCode": "312DCA",
-          "rValue": "49",
-          "gValue": "45",
-          "bValue": "202"
-        },
-        {
-          "hexCode": "D75A02",
-          "rValue": "215",
-          "gValue": "90",
-          "bValue": "2"
-        },
-        {
-          "hexCode": "78DADD",
-          "rValue": "120",
-          "gValue": "218",
-          "bValue": "221"
-        }
-      ]
-    },
-    {
       "id": "566c",
-      "name": "duck",
+      "name": "Lilac duck",
       "colours": [
         {
           "hexCode": "DFE931",
@@ -225,30 +135,6 @@
           "rValue": "190",
           "gValue": "113",
           "bValue": "229"
-        }
-      ]
-    },
-    {
-      "id": "8f72",
-      "name": "jeff",
-      "colours": [
-        {
-          "hexCode": "51BEE6",
-          "rValue": "81",
-          "gValue": "190",
-          "bValue": "230"
-        },
-        {
-          "hexCode": "F4E61F",
-          "rValue": "244",
-          "gValue": "230",
-          "bValue": "31"
-        },
-        {
-          "hexCode": "30AA78",
-          "rValue": "48",
-          "gValue": "170",
-          "bValue": "120"
         }
       ]
     }
